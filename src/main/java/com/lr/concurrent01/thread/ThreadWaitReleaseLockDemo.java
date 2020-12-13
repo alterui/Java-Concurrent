@@ -42,8 +42,13 @@ public class ThreadWaitReleaseLockDemo {
                 System.out.println("threadB get resourceA lock");
                 System.out.println("threadB try  get resourceB lock");
 
-                synchronized (resourceB) {
+               /* synchronized (resourceB) {
                     System.out.println("threadB get resourceB lock");
+                }*/
+                try {
+                    Thread.sleep(10000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
 
             }

@@ -11,17 +11,29 @@ public class App {
     public static void main(String[] args) {
 
 
-        new Thread(() -> {
+        Thread thread = new Thread(() -> {
 
             synchronized (resourceA) {
 
                 System.out.println("threadB get resourceA lock");
 
-                synchronized (resourceB) {
-                    System.out.println("threadB get resourceB lock");
+                try {
+                    resourceA.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
-
             }
-        }).start();
+        });
+
+        thread.start();
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("main over、、");
+
+
     }
 }

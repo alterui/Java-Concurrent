@@ -35,22 +35,14 @@ public class ThreadWaitReleaseLockDemo {
         Thread threadB = new Thread(() -> {
 
             synchronized (resourceA) {
-                /**
-                 * 为什么这里唤醒对象A，为什么线程A不继续执行呢----->代码line24行
-                 */
+                //notify()方法必须等待执行完代码块，放弃锁之后才起作用。
                 resourceA.notify();
                 System.out.println("threadB get resourceA lock");
                 System.out.println("threadB try  get resourceB lock");
 
-               /* synchronized (resourceB) {
+                synchronized (resourceB) {
                     System.out.println("threadB get resourceB lock");
-                }*/
-                try {
-                    Thread.sleep(10000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
                 }
-
             }
 
 

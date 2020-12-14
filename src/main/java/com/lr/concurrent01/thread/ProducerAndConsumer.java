@@ -51,11 +51,6 @@ public class ProducerAndConsumer {
                 }
             }).start();
         }
-
-
-
-
-
     }
 
 }

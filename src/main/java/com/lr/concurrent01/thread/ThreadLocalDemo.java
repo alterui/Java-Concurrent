@@ -21,7 +21,7 @@ public class ThreadLocalDemo {
             System.out.println("remove after threadTwo:"+threadLocal.get());
         });
         thread1.start();
-        thread2.start();
+
 
     }
 

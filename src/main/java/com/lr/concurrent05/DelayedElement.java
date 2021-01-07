@@ -1,5 +1,6 @@
 package com.lr.concurrent05;
 
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
 
@@ -38,6 +39,7 @@ class DelayedElement implements Delayed {
      */
     @Override
     public int compareTo(Delayed o) {
+
         return (int) (this.getDelay(TimeUnit.MILLISECONDS) -o.getDelay(TimeUnit.MILLISECONDS));
     }
 

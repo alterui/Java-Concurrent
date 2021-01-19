@@ -6,6 +6,8 @@ package com.lr.concurrent05;
  */
 public class StudentTest {
     public static void main(String[] args) {
-       int i = 1/0;
+        Student student = new Student("", null);
+
+        System.out.println(student);
     }
 }

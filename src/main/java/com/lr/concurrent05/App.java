@@ -1,14 +1,9 @@
 package com.lr.concurrent05;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author liurui
@@ -16,6 +11,12 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  */
 public class App {
     public static void main(String[] args) {
+
+        Object[] arr = new Object[10];
+        arr[0] = new Integer(1);
+        for (Object a : arr) {
+            System.out.println(a);
+        }
 
 
     }
